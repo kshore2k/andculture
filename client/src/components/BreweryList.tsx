@@ -1,22 +1,12 @@
 import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
+import IBrewery from './IBrewery';
 
 interface MatchParams {
     url: string;
 };
 
 interface IProps extends RouteComponentProps<MatchParams> {
-};
-
-interface IBrewery {
-    id: number,
-    name: string,
-    brewery_type: string,
-    street: string,
-    city: string,
-    state: string,
-    postal_code: string,
-    website_url?: string
 };
 
 interface IState {
@@ -34,7 +24,7 @@ class BreweryList extends React.Component<IProps, IState> {
     
 
     componentDidMount() {
-        fetch('https://api.openbrewerydb.org/breweries?by_city=seattle')
+        fetch('/api/breweries')
             .then(res => res.json())
             .then(data => this.setState({
                 breweries: data
@@ -44,11 +34,12 @@ class BreweryList extends React.Component<IProps, IState> {
     render() {
         const breweries = this.state.breweries.map( ( brewery ) => {
             return (
-                <div key={brewery.id}>
+                <div key={brewery._id}>
                     <Link 
-                        to={`${this.props.match.url}/${brewery.id}`}>
+                        to={`${this.props.match.url}/${brewery._id}`}>
                         {brewery.name}
                     </Link>
+                    <p>Brewery type: {brewery.brewery_type}</p>
                     <p>
                         {`${brewery.street} 
                         ${brewery.city}, 

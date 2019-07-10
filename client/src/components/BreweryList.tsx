@@ -24,9 +24,14 @@ interface IState {
 };
 
 class BreweryList extends React.Component<IProps, IState> {
-    state: IState = {
-        breweries: []
+    constructor(props: IProps) {
+        super(props);
+
+        this.state = {
+            breweries: []
+        };
     };
+    
 
     componentDidMount() {
         fetch('https://api.openbrewerydb.org/breweries?by_city=seattle')

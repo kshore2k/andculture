@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import SimpleMap from './SimpleMap';
 
 interface MatchParams {
     id: string
@@ -16,7 +17,10 @@ interface IBrewery {
     city: string,
     state: string,
     postal_code: string,
-    website_url?: string
+    website_url?: string,
+    phone: string,
+    longitude: string,
+    latitude: string
 };
 
 interface IState {
@@ -36,7 +40,10 @@ class BreweryDetails extends React.Component<IProps, IState> {
                 city: "",
                 state: "",
                 postal_code: "",
-                website_url: ""
+                website_url: "",
+                phone: "",
+                longitude: "",
+                latitude: ""
             }
         };
     };
@@ -63,12 +70,31 @@ class BreweryDetails extends React.Component<IProps, IState> {
                         ${brewery.state} 
                         ${brewery.postal_code}`}
                     </p>
-                    <a 
-                        href={brewery.website_url}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        {brewery.website_url}
-                    </a>
+                    {brewery.website_url !== "" ? (
+                        <a 
+                            href={brewery.website_url}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {brewery.website_url}
+                        </a>
+                    ) : (
+                        <p>No Website Available</p>
+                    )}
+                    {brewery.latitude !== null && brewery.longitude !== null ? (
+                        <SimpleMap 
+                            center={{ 
+                                lat: parseFloat(brewery.latitude), 
+                                lng: parseFloat(brewery.longitude) 
+                            }}
+                            brewery={{ 
+                                name: brewery.name,
+                                street: brewery.street,
+                                phone: brewery.phone
+                            }}
+                        />
+                    ) : (
+                        <p>No Map Available</p>
+                    )}
                 </div>
             );
         } else {

@@ -2,6 +2,7 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import IBrewery from './IBrewery';
 import SimpleMap from './SimpleMap';
+import './styles/BreweryDetails.css';
 
 interface MatchParams {
     id: string
@@ -28,6 +29,7 @@ class BreweryDetails extends React.Component<IProps, IState> {
                 state: "",
                 postal_code: "",
                 website_url: "",
+                image_url: "",
                 phone: "",
                 longitude: "",
                 latitude: ""
@@ -49,23 +51,26 @@ class BreweryDetails extends React.Component<IProps, IState> {
 
         if(brewery._id !== 0) {
             return (
-                <div>
+                <div id="container-details">
                     <h1>{brewery.name}</h1>
-                    <p>
+                    <p id="address">
                         {`${brewery.street} 
                         ${brewery.city}, 
                         ${brewery.state} 
                         ${brewery.postal_code}`}
                     </p>
                     {brewery.website_url !== "" ? (
-                        <a 
-                            href={brewery.website_url}
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            {brewery.website_url}
-                        </a>
+                        <span>Click to visit -> 
+                            <a 
+                                className="site-link"
+                                href={brewery.website_url}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                {brewery.website_url}
+                            </a>
+                        </span>
                     ) : (
-                        <p>No Website Available</p>
+                        <p className="null-msg">No Website Available</p>
                     )}
                     {brewery.latitude !== null && brewery.longitude !== null ? (
                         <SimpleMap 
@@ -80,14 +85,13 @@ class BreweryDetails extends React.Component<IProps, IState> {
                             }}
                         />
                     ) : (
-                        <p>No Map Available</p>
+                        <p className="null-msg">No Map Available</p>
                     )}
                 </div>
             );
         } else {
             return <p>...Loading</p>
-        }
-        
+        }  
     };
 };
 

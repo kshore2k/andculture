@@ -51,7 +51,7 @@ class SimpleMap extends React.Component<IProps, IState> {
   
     render() {
         return (
-            <div style={{ height: '100vh', width: '100%' }}>
+            <div style={{ height: '50vh', width: '50vw', padding: '50px' }}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: 'API KEY HERE' }}
                     defaultCenter={this.props.center}
@@ -67,7 +67,7 @@ class SimpleMap extends React.Component<IProps, IState> {
                 </GoogleMapReact>
             </div>
         );
-    }
-}
+    };
+};
   
 export default SimpleMap;

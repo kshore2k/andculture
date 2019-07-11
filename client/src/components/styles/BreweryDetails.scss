@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri&display=swap');
+
+$primary-font-family: 'Amiri', serif;
+$primary-font-color: rgb(34, 34, 34);
+
+#container-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-family: $primary-font-family;
+        font-size: 38px;
+        padding: 25px;
+        color: $primary-font-color;
+    }
+
+    #address {
+        font-family: $primary-font-family;
+        font-size: 18px;
+        padding: 10px;
+        color: $primary-font-color;
+    }
+
+    span {
+        font-family: $primary-font-family;
+        color: $primary-font-color;
+    }
+
+    .site-link {
+        font-family: $primary-font-family;
+        color: $primary-font-color;
+        text-decoration: none;
+        padding: 0px 10px;
+    }
+
+    .site-link:hover {
+        text-decoration: underline;
+    }
+
+    .null-msg {
+        font-family: $primary-font-family;
+        color: $primary-font-color;
+    }
+}

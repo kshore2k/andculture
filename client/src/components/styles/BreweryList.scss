@@ -5,8 +5,8 @@
     padding: 0;
 }
 
-$primary-font-color: rgb(34, 34, 34);
 $primary-font-family: 'Amiri', serif;
+$primary-font-color: rgb(34, 34, 34);
 
 #header {
     background-color: white;
@@ -55,19 +55,19 @@ $primary-font-family: 'Amiri', serif;
         }
     }
 
-    a {
+    .web-link {
         font-family: $primary-font-family;
         text-decoration: none;
         color: $primary-font-color;
         line-height: 20px;
     }
 
-    a:hover {
+    .web-link:hover {
         text-decoration: underline;
     }
 }
 
-#detail-link {
+.detail-link {
     font-family: $primary-font-family;
     font-size: 24px;
     text-decoration: none;
@@ -75,6 +75,6 @@ $primary-font-family: 'Amiri', serif;
     line-height: 22px;
 }
 
-#detail-link:hover {
+.detail-link:hover {
     color: rgb(221, 70, 128);
 }

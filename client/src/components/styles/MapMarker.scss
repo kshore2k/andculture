@@ -1,0 +1,32 @@
+#marker-img {
+    height: 50px;
+    width: 'auto';
+}
+
+#detail-popup {
+    height: 75px;
+    width: 200px;
+    background-color: white;
+    padding: 2px;
+    animation: popout .5s ease;
+    -webkit-animation: popout .5s ease;
+
+    h3 {
+        padding-bottom: 5px;
+    }
+
+    p {
+        padding-bottom: 2px;
+    }
+}
+
+@keyframes popout {
+    from{transform:scale(0)}
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
+}

@@ -11,6 +11,7 @@ const BrewerySchema = new mongoose.Schema({
     state: { type: String, required: true },
     postal_code: { type: String, required: true },
     website_url: { type: String, required: false },
+    image_url: { type: String, required: true },
     phone: { type: String, required: false },
     longitude: { type: String, required: false },
     latitude: { type: String, required: false },

@@ -7,6 +7,7 @@ export default interface IBrewery {
     state: string,
     postal_code: string,
     website_url: string,
+    image_url: string,
     phone: string,
     longitude: string,
     latitude: string

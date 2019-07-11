@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+$primary-font-color: rgb(34, 34, 34);
+$primary-font-family: 'Amiri', serif;
+
+#header {
+    background-color: white;
+    font-family: $primary-font-family;
+    font-size: 34px;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    border-bottom: 1px solid rgb(206, 205, 205);
+    z-index: 11;
+}
+
+#container-breweries {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-basis: 1200px;
+    max-width: 1200px;
+    position: relative;
+    padding-top: 125px;
+    padding-bottom: 50px;
+}
+
+.container-brewery {
+    height: 575px;
+    width: 285px;
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-family: $primary-font-family;
+        font-size: 16px;
+        color: $primary-font-color;
+        line-height: 20px;
+        margin: 7px 0px;
+
+        span {
+            font-family: $primary-font-family;
+            font-style: italic;
+        }
+    }
+
+    a {
+        font-family: $primary-font-family;
+        text-decoration: none;
+        color: $primary-font-color;
+        line-height: 20px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+#detail-link {
+    font-family: $primary-font-family;
+    font-size: 24px;
+    text-decoration: none;
+    color: $primary-font-color;
+    line-height: 22px;
+}
+
+#detail-link:hover {
+    color: rgb(221, 70, 128);
+}

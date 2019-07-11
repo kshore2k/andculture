@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Amiri&display=swap");
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+#header {
+  background-color: white;
+  font-family: "Amiri", serif;
+  font-size: 34px;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  border-bottom: 1px solid #cecdcd;
+  z-index: 11;
+}
+
+#container-breweries {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-basis: 1200px;
+  max-width: 1200px;
+  position: relative;
+  padding-top: 125px;
+  padding-bottom: 50px;
+}
+
+.container-brewery {
+  height: 575px;
+  width: 285px;
+  margin-bottom: 20px;
+}
+.container-brewery img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.container-brewery p {
+  font-family: "Amiri", serif;
+  font-size: 16px;
+  color: #222222;
+  line-height: 20px;
+  margin: 7px 0px;
+}
+.container-brewery p span {
+  font-family: "Amiri", serif;
+  font-style: italic;
+}
+.container-brewery a {
+  font-family: "Amiri", serif;
+  text-decoration: none;
+  color: #222222;
+  line-height: 20px;
+}
+.container-brewery a:hover {
+  text-decoration: underline;
+}
+
+#detail-link {
+  font-family: "Amiri", serif;
+  font-size: 24px;
+  text-decoration: none;
+  color: #222222;
+  line-height: 22px;
+}
+
+#detail-link:hover {
+  color: #dd4680;
+}
+
+/*# sourceMappingURL=BreweryList.css.map */

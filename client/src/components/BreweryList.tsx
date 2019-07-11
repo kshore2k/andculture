@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import IBrewery from './IBrewery';
+import './BreweryList.css';
+import brewImage from '../img/hellbent.jpg';
 
 interface MatchParams {
     url: string;
@@ -34,12 +36,14 @@ class BreweryList extends React.Component<IProps, IState> {
     render() {
         const breweries = this.state.breweries.map( ( brewery ) => {
             return (
-                <div key={brewery._id}>
+                <div className="container-brewery" key={brewery._id}>
+                    <img src={brewImage} alt="frosty_beer"/>
                     <Link 
+                        id="detail-link"
                         to={`${this.props.match.url}/${brewery._id}`}>
                         {brewery.name}
                     </Link>
-                    <p>Brewery type: {brewery.brewery_type}</p>
+                    <p>Type: <span>{brewery.brewery_type}</span></p>
                     <p>
                         {`${brewery.street} 
                         ${brewery.city}, 
@@ -57,8 +61,11 @@ class BreweryList extends React.Component<IProps, IState> {
         })
 
         return (
-            <div>
-                {breweries}
+            <div id="container-main">
+                <h1 id="header">Seattle Breweries</h1>
+                <div id="container-breweries">
+                    {breweries}
+                </div>
             </div>
         );
     };

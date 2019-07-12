@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact, { Coords } from 'google-map-react';
 import MapMarker from './MapMarker';
+import './styles/SimpleMap.css';
 
 interface IProps {
     center: Coords,
@@ -51,9 +52,9 @@ class SimpleMap extends React.Component<IProps, IState> {
   
     render() {
         return (
-            <div style={{ height: '50vh', width: '50vw', padding: '50px' }}>
+            <div id="container-map">
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'API KEY HERE' }}
+                    bootstrapURLKeys={{ key: process.env.MAP_KEY || 'API KEY HERE' }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                     center={this.state.center}

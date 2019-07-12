@@ -1,4 +1,5 @@
 const Brewery = require('./models');
+const path = require('path');
 
 module.exports = {
     findAll: (req, res) => {
@@ -15,5 +16,8 @@ module.exports = {
         Brewery.create(req.body)
             .then(data => res.json(data))
             .catch(err => res.json(err))
+    },
+    catch: (req, res) => {
+        res.sendFile(path.join(__dirname = 'client/build/index.html'));
     }
 };

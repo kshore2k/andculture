@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/andculture_brewery', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/andculture_brewery', { useNewUrlParser: true });
 
 const BrewerySchema = new mongoose.Schema({
     _id: { type: Number, required: true },

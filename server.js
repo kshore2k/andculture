@@ -10,7 +10,7 @@ const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 require('./server/routes')(app);
 

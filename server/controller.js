@@ -18,6 +18,6 @@ module.exports = {
             .catch(err => res.json(err))
     },
     catch: (req, res) => {
-        res.sendFile(path.join(__dirname = '../client/build/index.html'));
+        res.sendFile(path.join(__dirname+'/client/build/index.html'));
     }
 };

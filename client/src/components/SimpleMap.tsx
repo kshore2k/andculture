@@ -54,7 +54,7 @@ class SimpleMap extends React.Component<IProps, IState> {
         return (
             <div id="container-map">
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'AIzaSyBa9i7OBYVuNYY3TrdHK-pstf7b-1TOoLg' }}
+                    bootstrapURLKeys={{ key: process.env.MAP_KEY || 'API KEY HERE' }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                     center={this.state.center}

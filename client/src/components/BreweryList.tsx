@@ -32,8 +32,8 @@ class BreweryList extends React.Component<IProps, IState> {
             }));
     };
 
-    render() {
-        const breweries = this.state.breweries.map( ( brewery ) => {
+    mapBreweries = () => {
+        const mappedBreweries = this.state.breweries.map( ( brewery ) => {
             return (
                 <div className="container-brewery" key={brewery._id}>
                     <img src={brewery.image_url} alt="frosty_beer"/>
@@ -58,7 +58,12 @@ class BreweryList extends React.Component<IProps, IState> {
                     </a>
                 </div>
             );
-        })
+        });
+        return mappedBreweries;
+    };
+
+    render() {
+        const breweries = this.mapBreweries();
 
         return (
             <div id="container-main">
